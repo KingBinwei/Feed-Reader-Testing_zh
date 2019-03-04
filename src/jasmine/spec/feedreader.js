@@ -88,5 +88,15 @@ $(function() {
          * 写一个测试保证当用 loadFeed 函数加载一个新源的时候内容会真的改变。
          * 记住，loadFeed() 函数是异步的。
          */
+        var feedLinks = $('.feed').children();
+
+        beforeEach(function(done) {
+            loadFeed(2, done);
+        }, 20000);
+
+        it("will change page content", function() {
+            expect($(".header-title").text() == allFeeds[2].name).toBe(true);
+            expect($('.feed').children() != feedLinks).toBe(true);
+        });
     });
 }());
