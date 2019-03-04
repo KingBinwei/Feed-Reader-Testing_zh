@@ -35,6 +35,12 @@ $(function() {
         /* TODO:
          * 编写一个测试遍历 allFeeds 对象里面的所有的源来保证有名字字段而且不是空的。
          */
+        it('names are present', function() {
+                for(var i = 0;i < allFeeds.length;i++) {
+                   expect(allFeeds[i].name).toBeDefined();
+                   expect(allFeeds[i].name).not.toBe(null);
+                }
+        });
     });
 
 
