@@ -58,6 +58,12 @@ $(function() {
           * 测试应该包含两个 expectation ： 党点击图标的时候菜单是否显示，
           * 再次点击的时候是否隐藏。
           */
+        it('will change status when click menu icon', function() {
+            $('.menu-icon-link').trigger('click');
+            expect($('body').hasClass('menu-hidden')).toBe(false);
+            $('.menu-icon-link').trigger('click');
+            expect($('body').hasClass('menu-hidden')).toBe(true);
+        });
     });
     /* TODO: 13. 写一个叫做 "Initial Entries" 的测试用例 */
 
